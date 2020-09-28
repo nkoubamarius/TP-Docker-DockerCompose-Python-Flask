@@ -10,6 +10,6 @@ Open a terminal and tap docker-compose up -d
 
 Once finished do:
 
-curl -u toto:python -X GET http://<your ip adress>:5000/pozos/api/v1.0/get_student_ages
+curl -u toto:python -X GET http://<<your ip adress>>:5000/pozos/api/v1.0/get_student_ages
   
 and open your browser and tap http://localhost:80/
