@@ -1,0 +1,29 @@
+version: "3"
+services:
+    app:
+        image: php:apache
+        environment: 
+            USERNAME: toto
+            PASSWORD: python
+        volumes:
+            - "./website:/var/www/html" 
+        depends_on: 
+            - api
+        ports:
+            - "80:80"
+        networks: 
+            - defaultnet
+    api:
+        build: 
+            context: ./simple_api/
+            dockerfile: Dockerfile
+        image: img_python
+        container_name: img_python_cont
+        volumes:
+            - '/data/student_age.json:/data/student_age.json'
+        ports:
+            - "5000:5000"
+        networks: 
+            - defaultnet
+networks: 
+    defaultnet:  
